@@ -77,4 +77,16 @@ namespace api
 		
 		
 		
+8. create angular app inside src.
 
+9. run npm i -D electron@latest.
+10. Create main.js file in angular root folder.
+11. Set output path in angular.json.
+		"options": {
+      "outputPath": "dist",
+12.  add in package.json "main": "main.js",	  
+	  
+11. Add in package.json
+	"scripts": {
+		"electron": "ng build --base-href ./ && electron .",
+	
