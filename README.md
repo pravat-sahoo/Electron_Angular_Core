@@ -97,7 +97,7 @@ namespace api
 1.run  npm install electron-builder --save-dev
 2. Add following code in package.json.
 		
-		 "electron-builder": {
+		 "build": {
     "appId": "cross-platform-desktop",
     "directories": {
       "buildResources": "../../assets",
