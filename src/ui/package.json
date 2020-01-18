@@ -5,11 +5,34 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "ng build --base-href ./ && electron ."
+  },
+  "electron-builder": {
+    "appId": "cross-platform-desktop",
+    "directories": {
+      "buildResources": "../../assets",
+      "output": "../../dist"
+    },
+    "extraResources": {
+      "from": "../api/bin/dist/",
+      "to": "api/bin/dist/",
+      "filter": [
+        "**/*"
+      ]
+    },
+    "mac": {
+      "category": "cross-platform-desktop"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
   },
   "private": true,
   "dependencies": {
@@ -45,6 +68,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "electron-builder": "^22.2.0"
   }
 }

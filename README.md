@@ -90,3 +90,34 @@ namespace api
 	"scripts": {
 		"electron": "ng build --base-href ./ && electron .",
 	
+12. Run npm run electron.
+
+---------------------------------------
+#Distribution.
+1.run  npm install electron-builder --save-dev
+2. Add following code in package.json.
+		
+		 "electron-builder": {
+    "appId": "cross-platform-desktop",
+    "directories": {
+      "buildResources": "../../assets",
+      "output": "../../dist"
+    },
+    "extraResources": {
+      "from": "../api/bin/dist/",
+      "to": "api/bin/dist/",
+      "filter": [
+        "**/*"
+      ]
+    },
+    "mac": {
+      "category": "cross-platform-desktop"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  }
+  3. Add following line package.json  inside script
+	  "dist": "electron-builder"
