@@ -121,3 +121,5 @@ namespace api
   }
   3. Add following line package.json  inside script
 	  "dist": "electron-builder"
+	  
+4. Run npm run dist to create exe.
