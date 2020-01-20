@@ -18,9 +18,11 @@ Getting Started
 	
 4.Replacing program.cs content with code bellow	
 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+
+{
+	using Microsoft.AspNetCore.Builder;
+	using Microsoft.AspNetCore.Hosting;
+	using Microsoft.Extensions.DependencyInjection;
 
 namespace api
 {
@@ -61,7 +63,7 @@ namespace api
         }
     }
 }
-
+}
 5. Add a ContactsController.cs file inside a folder called Controllers.
 
 6. We need to do is to specify which runtimes we are supporting by adding the following line to the api.csproj
@@ -123,3 +125,10 @@ namespace api
 	  "dist": "electron-builder"
 	  
 4. Run npm run dist to create exe.
+
+------------------------------------------
+Run Application
+	1. dotnet restore inside api folder using cmd opowershell.
+	2. dotnet publish -r win10-x64 --output bin/dist/win inside api folder using cmd opowershell.
+	3. "npm i" in angular project.
+	4. "npm run electron" in angular project.
